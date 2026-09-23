@@ -1,7 +1,6 @@
-// NOTE: The nav below uses <a href="…"> which triggers full page reloads.
-// Lab 07 asks you to install react-router and replace these with <Link>.
+import { Outlet } from "react-router";
 
-const Layout = ({ children }) => {
+const Layout = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <nav className="h-14 flex items-center justify-between border-2 px-5 border-blue-600">
@@ -25,8 +24,9 @@ const Layout = ({ children }) => {
           </a>
         </div>
       </nav>
+
       <main className="flex-1 border-2 border-amber-400 p-3">
-        {children}
+        <Outlet />
       </main>
     </div>
   );
