@@ -1,4 +1,5 @@
-import { useParams, useNavigate, Link } from "react-router";
+
+import { useParams, useNavigate } from "react-router";
 import COUNTRIES from "../data/countries";
 
 const CountryDetailPage = () => {
@@ -8,21 +9,6 @@ const CountryDetailPage = () => {
   const country = COUNTRIES.find(
     (c) => c.code === countryCode.toUpperCase()
   );
-
-  if (!country) {
-    return (
-      <div className="max-w-2xl mx-auto py-10 text-center space-y-4">
-        <h1 className="text-3xl font-bold">Country not found</h1>
-        <p>
-          No country with code "{countryCode}" exists in our data.
-        </p>
-
-        <Link to="/countries" className="btn btn-primary">
-          Back to Countries
-        </Link>
-      </div>
-    );
-  }
 
   const handleRandom = () => {
     const others = COUNTRIES.filter((c) => c.code !== country.code);
